@@ -83,7 +83,7 @@
 
 
 
-			    while (numero > 1)
+			    while (numero > 0)
 			        {
 			       resultado[i]= numero / 2;
 			       resto[i] = numero % 2;
@@ -107,8 +107,8 @@
 
 	//Exercicio 4----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-			/*	#include <stdio.h>
-				#include <stdlib.h>
+		/*	#include <stdio.h>
+			#include <stdlib.h>
 
 			void fibonacci(int n);
 
@@ -125,7 +125,7 @@
 
 			void fibonacci(int n)
 				{
-					int i=1,
+						int i=1,
 						j=0,
 						k,
 						t,
@@ -219,7 +219,7 @@
 	        }
 	        for (i=0 , j=0 ; i<strlen(palavra) ; i++ , j++)
 	            {
-	                if ( palavra[i]! = inversa[j] )
+	                if ( palavra[i] != inversa[j] )
 	                palindromo="0";	
 	                else
 	                palindromo="1";
@@ -241,7 +241,7 @@
 	/*#include<stdio.h>
 	#include<stdlib.h>
 	#include<math.h>
-    #include<string.h>
+    	#include<string.h>
 
 
 struct raizes calculo(float a, float b, float c);
@@ -272,7 +272,7 @@ struct raizes calculo(float a, float b, float c)
 {
 	float delta, x1, x2;
 	int status;
-    struct raizes resposta;
+    	struct raizes resposta;
 
 	delta=pow(b,2)-4*a*c;
 	printf ("\nDelta e igual a %.2f\n", delta);
@@ -304,7 +304,111 @@ struct raizes calculo(float a, float b, float c)
 	    resposta.x1=x1;
 	    resposta.x2=x2;
 		return resposta;
-	}
+			}
+              }*/
+	//Exercicio 7-------------------------------------------------------------------------------------------------------------------
+		
+	//Exercicio 12----------------------------------------------------------------------------------------------------------
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,espaco;
+    float menor, massa[150];
+    printf("Informe a massa ");
+    for(i=0;i<150;i++){
+        printf("do individuo %d: ",i+1);
+        scanf("%f",&massa[i]);
+    }
+    menor=massa[0];
+    for(i=1;i<150;i++){
+        if(massa[i]<menor){
+            menor=massa[i];
+            espaco=i+1;
+        }
+    }
+    printf("O menor peso se encontra no espaco: %d",espaco);
+    return 0;
 }*/
-	//Exercicio 7----------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	//Exercicio 12----------------------------------------------------------------------------------------------------------
+
+	//Exercicio 13----------------------------------------------------------------------------------------------------------
+/*#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void mergefuncoes(char vetorA[][20],int quantA,char vetorB[][20],int quantB){
+   int i,j,k=0,total;
+   i=0;
+   j=0;
+   total=quantA+quantB;
+   char vetC[total][20];
+    while(i<quantA&&j<quantB){
+        if(strcmp(vetorA[i],vetorB[j])==-1){
+                strcpy(vetC[k],vetorA[i]);
+            k++;
+            i++;
+        }
+        else if(strcmp(vetorA[i],vetorB[j])==1){
+            strcpy(vetC[k],vetorB[j]);
+            j++;
+            k++;
+        }
+        else{
+            strcpy(vetC[k],vetorA[i]);
+            k++;
+            i++;
+           strcpy(vetC[k],vetorB[j]);
+            k++;
+            j++;
+        }
+    }
+    if(i<quantA){
+        for(j=i;j<quantA;j++){
+            strcpy(vetC[k],vetorA[j]);
+            k++;
+        }
+    }else{
+        for(i=j;i<quantB;i++){
+            strcpy(vetC[k],vetorB[i]);
+            k++;
+        }
+    }
+    ///vetor ja ordenado em ordem alfabetica
+    printf("\nO vetor ordenado alfabetiicamente: ");
+    for(i=0;i<total;i++){
+        printf("\n%s",vetC[i]);
+    }
+}
+int main()
+{
+    int qt1,qt2,i;
+    printf("Informe quantos nomes taram a primeira lista de nomes: ");
+    scanf("%d",&qt1);
+    printf("Informe quantos nomes taram a segunda lista de nomes: ");
+    scanf("%d",&qt2);
+    char vetor1[qt1][20],vetor2[qt2][20];
+    printf("\nInsira os vetores em ordem alfabetica\n");
+
+    printf("\nInsira a primeira lista de nomes:\n");
+    for(i=0;i<qt1;i++){
+        printf("Nome %d: ",i+1);
+        scanf("%s",vetor1[i]);
+
+    }
+     printf("\nINFORME A SEGUNDA LISTA DE NOMES:\n");
+     for(i=0;i<qt2;i++){
+        printf("Nome %d: ",i+1);
+        scanf("%s",vetor2[i]);
+    }
+    mergefuncoes(vetor1,qt1,vetor2,qt2);
+
+    return 0;
+}
+
+	//Exercicio 13----------------------------------------------------------------------------------------------------------
+
+
+
 
